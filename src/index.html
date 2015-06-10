@@ -12,7 +12,13 @@
     <h1>...</h1>
 
     <form name="optForm" onsubmit="return false;">
-      <input name="childrenLen" type="number">
+      <label for="childrenLen"></label>
+      <input name="childrenLen" id="childrenLen" type="number"
+             min="2" max="50">
+
+      <label for="size"></label>
+      <input name="size" id="size" type="range"
+             min="0" max="50"/>
       <button type="submit">
         submit
       </button>

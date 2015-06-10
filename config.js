@@ -10,19 +10,6 @@ System.config({
     "*": "*.js",
     "github:*": "jspm_packages/github/*.js",
     "npm:*": "jspm_packages/npm/*.js"
-  },
-  "bundles": {
-    "build": [
-      "npm:process@0.10.1/browser",
-      "src/js/selectors",
-      "npm:process@0.10.1",
-      "github:jspm/nodelibs-process@0.1.1/index",
-      "github:jspm/nodelibs-process@0.1.1",
-      "npm:lodash@3.8.0/index",
-      "npm:lodash@3.8.0",
-      "src/js/helpers",
-      "src/app"
-    ]
   }
 });
 

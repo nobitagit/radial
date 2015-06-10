@@ -4,8 +4,7 @@
   "description": "generate css code to place things around a point in your html",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test",
-    "serve": "./node_modules/.bin/serve ."
+    "bundle": "jspm bundle-sfx src/app dist/app.js"
   },
   "author": "Nobita",
   "license": "mit",
