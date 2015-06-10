@@ -1,0 +1,27 @@
+{
+  "name": "radials",
+  "version": "0.0.1",
+  "description": "generate css code to place things around a point in your html",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test",
+    "serve": "./node_modules/.bin/serve ."
+  },
+  "author": "Nobita",
+  "license": "mit",
+  "devDependencies": {
+    "jspm": "^0.15.6",
+    "serve": "^1.4.0"
+  },
+  "jspm": {
+    "directories": {},
+    "dependencies": {
+      "lodash": "npm:lodash@^3.8.0"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.1.13",
+      "babel-runtime": "npm:babel-runtime@^5.1.13",
+      "core-js": "npm:core-js@^0.9.4"
+    }
+  }
+}
