@@ -1,5 +1,4 @@
 function getVal(elem) {
-  console.dir(elem);
   return {
     val : parseInt(elem.value),
     type: elem.type

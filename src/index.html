@@ -9,16 +9,24 @@
   </head>
   <body>
 
-    <h1>...</h1>
+    <h1>Radial</h1>
 
     <form name="optForm" onsubmit="return false;">
-      <label for="childrenLen"></label>
+      <label for="childrenLen">How many images?</label>
       <input name="childrenLen" id="childrenLen" type="number"
-             min="2" max="50">
+             min="2" max="50" required />
 
-      <label for="size"></label>
-      <input name="size" id="size" type="range"
-             min="0" max="50"/>
+      <br>
+
+      <label for="imgSize">Image width</label>
+      <input name="imgSize" id="imgSize" type="range"
+             min="1" max="200"required /> px
+
+      <br>
+
+      <label for="circleSize">Size of the circle</label>
+      <input name="circleSize" id="circleSize" type="range"
+             min="1" max="1000" required />
       <button type="submit">
         submit
       </button>

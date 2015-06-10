@@ -1,18 +1,25 @@
-import * as printers from './js/helpers';
+import * as helpers from './js/helpers';
 import * as elem from './js/selectors';
 import * as formValue from './js/formValues';
 import * as logic from './js/logic';
 
-var test = printers.generateCSS();
+var test = helpers.generateCSS();
 
 console.log(test)
 
 function init(evt) {
-  let size = formValue.get(elem.size)
+  let outerSize = formValue.get(elem.circleSize)
+    , imgSize = formValue.get(elem.imgSize)
     , num = formValue.get(elem.childrenLen);
 
-  var a = logic.calcPosition(num, 40, 498);
-  console.log(a)
+  var coords = logic.calcPosition(num, imgSize, outerSize);
+
+  elem.createImgs(num, coords, imgSize);
+
+  elem.setSizes({
+    outer: outerSize,
+    imgs: imgSize
+  });
 
 }
 
