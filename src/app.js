@@ -1,5 +1,5 @@
-import * as printers from './helpers';
-import * as elem from './selectors'
+import * as printers from './js/helpers';
+import * as elem from './js/selectors'
 var test = printers.generateCSS();
 
 console.log(test)
