@@ -1,21 +1,16 @@
-function getVal(elem) {
-  return {
-    val : parseInt(elem.value),
-    type: elem.type
-  }
-}
-
 let validate = {
   number : function (val) {
-    return !!val;
+    return parseInt(val);
   },
   range : function (val) {
     return this.number(val);
+  },
+  'select-one' : function (val) {
+    return val;
   }
 }
 
 export function get(elem) {
-  let value = getVal(elem);
-  return validate[value.type](value.val) ? value.val : false;
+  return validate[elem.type](elem.value);
 }
 

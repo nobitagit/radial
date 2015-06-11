@@ -6,27 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   </head>
   <body>
 
-    <h1>Radial</h1>
+    <h1>Radial images CSS generator </h1>
 
-    <form name="optForm" onsubmit="return false;">
+    <form class="controls" name="optForm" onsubmit="return false;">
       <label for="childrenLen">How many images?</label>
       <input name="childrenLen" id="childrenLen" type="number"
-             min="2" max="50" required />
+             min="2" max="50" required value="23" />
 
       <br>
 
       <label for="imgSize">Image width</label>
       <input name="imgSize" id="imgSize" type="range"
-             min="1" max="200"required /> px
+             min="1" max="200"required value="70"/> px
 
       <br>
 
       <label for="circleSize">Size of the circle</label>
       <input name="circleSize" id="circleSize" type="range"
-             min="1" max="1000" required />
+             min="1" max="1000" required value="400"/>
+
+      <br>
+
+      <label for="distance">Distance of the images from the circle</label>
+      <input name="distance" id="distance" type="range"
+             min="-100" max="100" required value="10"/>
+
+      <br>
+
+      <label for="icon">Choose an icon</label>
+      <select name="icon" id="icon">
+        <option value="ion-social-github-outline">Octocat</option>
+        <option value="ion-social-nodejs">Node</option>
+        <option value="ion-social-codepen-outline" selected>Codepen</option>
+        <option value="ion-social-dropbox-outline">Dropbox</option>
+      </select>
+
+      <br>
+      <input name="update" id="update"type="checkbox" value="liveUpdate" checked>
+      <label for="update">Live update</label>
+
       <button type="submit">
         submit
       </button>

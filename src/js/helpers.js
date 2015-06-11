@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 export function generateCSS() {
   let str = "";
   // MIND: currently len is not casted against total and will throw an error

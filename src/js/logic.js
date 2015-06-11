@@ -13,14 +13,12 @@ function getImgWidth (img) {
     return img.getBoundingClientRect().width;
 }
 
-export function calcPosition (totalImgs, imgWidth, outerDiameter) {
+export function calcPosition (total, imgW, difference, outerDiameter) {
 
-    let alpha = Math.PI / 2
-      , coords = {}
-      , total = totalImgs
-      , imgW = imgWidth
+    let coords = {}
       , outerRadius = outerDiameter / 2
-      , innerRadius = outerRadius - imgW
+      , innerRadius = (outerRadius - difference) - imgW //outerRadius - imgW
+      , alpha = Math.PI / 2
       , corner = 2 * Math.PI / total;
 
     for ( let i = 0 ; i < total; i++ ){

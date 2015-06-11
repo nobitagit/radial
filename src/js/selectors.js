@@ -2,12 +2,13 @@ export
   var container = document.getElementById('container')
   , imgSize = document.getElementById('imgSize')
   , circleSize = document.getElementById('circleSize')
+  , distance = document.getElementById('distance')
   , childrenLen = document.getElementById('childrenLen')
-  , children = container.getElementsByTagName('span')
+  , liveFlag = document.getElementById('update')
+  , icon = document.getElementById('icon')
   , form = document.forms['optForm']
   , setSizes = setSizes
   , createImgs = createImgs
-  , clearStage = clearStage
 
 
   function setSizes (values) {
@@ -15,22 +16,19 @@ export
   }
 
   function clearStage () {
-    container.innerHTML = '';
+    container.innerHTML = ''; // use the (brute) force
   }
 
-  function createImgs (len, coords, size) {
-    let chosenImg = 'http://icongal.com/gallery/image/278651/person_customer_user_face_comment.png';
-
+  function createImgs (len, size, coords, icon) {
+    // make sure stage is always empty before injecting
     clearStage();
 
     for(let i = 0; i < len; i++){
-      let img = document.createElement('img');
-      img.className = 'myImg';
-      img.setAttribute('src', chosenImg);
-      img.style.width = size + 'px';
-      img.style.height = size + 'px';
-      img.style.left = coords[i].x + 'px';
-      img.style.top = coords[i].y + 'px';
-      container.appendChild(img);
+      let div = document.createElement('div');
+      div.className = icon;
+      div.style.width = div.style.height = div.style.fontSize = size + 'px';
+      div.style.left = coords[i].x + 'px';
+      div.style.top = coords[i].y + 'px';
+      container.appendChild(div);
     }
   }
