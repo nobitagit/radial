@@ -15,7 +15,7 @@ function getImgWidth (img) {
 
 export function calcPosition (total, imgW, difference, outerDiameter) {
 
-    let coords = {}
+    let coords = []
       , outerRadius = outerDiameter / 2
       , innerRadius = (outerRadius - difference) - imgW //outerRadius - imgW
       , alpha = Math.PI / 2
@@ -23,10 +23,10 @@ export function calcPosition (total, imgW, difference, outerDiameter) {
 
     for ( let i = 0 ; i < total; i++ ){
 
-      coords[i] = {
+      coords.push({
         x : parseInt( ( outerRadius - imgW / 2 ) + ( innerRadius * Math.cos( alpha ) ) ),
         y : parseInt( ( outerRadius - imgW / 2 ) - ( innerRadius * Math.sin( alpha ) ) )
-      }
+      })
 
       alpha = alpha - corner;
     }

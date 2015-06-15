@@ -6,10 +6,11 @@ export
   , childrenLen = document.getElementById('childrenLen')
   , liveFlag = document.getElementById('update')
   , icon = document.getElementById('icon')
+  , genCSS = document.getElementById('generateCSS')
+  , well = document.getElementById('well')
   , form = document.forms['optForm']
   , setSizes = setSizes
   , createImgs = createImgs
-
 
   function setSizes (values) {
     container.style.width = container.style.height = values.outer + 'px';

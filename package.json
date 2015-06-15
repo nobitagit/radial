@@ -1,6 +1,6 @@
 {
   "name": "radials",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "generate css code to place things around a point in your html",
   "main": "index.js",
   "scripts": {

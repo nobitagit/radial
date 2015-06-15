@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   </head>
@@ -13,27 +13,37 @@
     <h1>Radial images CSS generator </h1>
 
     <form class="controls" name="optForm" onsubmit="return false;">
+
+      <!-- number of images -->
       <label for="childrenLen">How many images?</label>
-      <input name="childrenLen" id="childrenLen" type="number"
+      <input name="childrenLen" id="childrenLen" type="range"
+             oninput="childrenLenAmount.value=childrenLen.value"
              min="2" max="50" required value="23" />
+      <output name="childrenLenAmount" id="childrenLenAmount" for="childrenLen"></output>
 
       <br>
-
-      <label for="imgSize">Image width</label>
+      <!-- size of the images -->
+      <label for="imgSize">Images size</label>
       <input name="imgSize" id="imgSize" type="range"
-             min="1" max="200"required value="70"/> px
+             oninput="imgSizeAmount.value=imgSize.value + 'px'"
+             min="1" max="200"required value="70"/>
+      <output name="imgSizeAmount" id="imgSizeAmount" for="imgSize"></output>
 
       <br>
-
+      <!-- size of the circle -->
       <label for="circleSize">Size of the circle</label>
       <input name="circleSize" id="circleSize" type="range"
+             oninput="circleSizeAmount.value=circleSize.value + 'px'"
              min="1" max="1000" required value="400"/>
+      <output name="circleSizeAmount" id="circleSizeAmount" for="circleSize"></output>
 
       <br>
-
+      <!-- distance from the circle border -->
       <label for="distance">Distance of the images from the circle</label>
       <input name="distance" id="distance" type="range"
-             min="-100" max="100" required value="10"/>
+             oninput="distanceAmount.value=distance.value"
+             min="-200" max="200" required value="10"/>
+      <output name="distanceAmount" id="distanceAmount" for="distance"></output>
 
       <br>
 
@@ -49,15 +59,21 @@
       <input name="update" id="update"type="checkbox" value="liveUpdate" checked>
       <label for="update">Live update</label>
 
-      <button type="submit">
-        submit
-      </button>
+      <input type="submit" value="update">
+      <input id="generateCSS" type="button" value="generate CSS">
     </form>
 
-    <div class="stage">
+    <main class="stage">
       <div id="container"></div>
-    </div>
+    </main>
 
+    <pre id="well"></pre>
+
+    <footer>
+      by Nobita - MIT
+    </footer>
+
+<a href="https://github.com/you"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
     <script src="/jspm_packages/system.js"></script>
     <script src="/config.js"></script>
     <script>

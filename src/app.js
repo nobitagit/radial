@@ -3,8 +3,6 @@ import * as elem from './js/selectors';
 import * as formValue from './js/formValues';
 import * as logic from './js/logic';
 
-var test = helpers.generateCSS();
-
 function draw() {
   let outerSize = formValue.get(elem.circleSize)
     , distance = formValue.get(elem.distance)
@@ -21,6 +19,12 @@ function draw() {
     imgs: imgSize
   });
 
+  return helpers.generateCSS(coords);
+}
+
+function displayCSS(argument) {
+  let str = draw();
+  elem.well.innerHTML = str;
 }
 
 function init() {
@@ -28,6 +32,7 @@ function init() {
   let action = elem.liveFlag.checked ? 'addEventListener' : 'removeEventListener';
 
   elem.form.addEventListener('submit', draw, false);
+
   elem.circleSize[action]('change', draw, false);
   elem.imgSize[action]('change', draw, false);
   elem.childrenLen[action]('change', draw, false);
@@ -36,6 +41,7 @@ function init() {
 }
 
 elem.liveFlag.addEventListener('change', init, false);
+elem.genCSS.addEventListener('click', displayCSS, false);
 
 init();
 draw();
