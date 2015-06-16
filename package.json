@@ -4,6 +4,7 @@
   "description": "generate css code to place things around a point in your html",
   "main": "index.js",
   "scripts": {
+    "serve" : "open http://localhost:3000/src/ && serve",
     "bundle-sfx": "jspm bundle-sfx src/app dist/app.js",
     "bundle": "jspm bundle src/app dist/app.js"
   },

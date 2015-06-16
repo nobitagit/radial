@@ -17,7 +17,7 @@ export function calcPosition (total, imgW, difference, outerDiameter) {
 
     let coords = []
       , outerRadius = outerDiameter / 2
-      , innerRadius = (outerRadius - difference) - imgW //outerRadius - imgW
+      , innerRadius = (outerRadius - difference) - imgW
       , alpha = Math.PI / 2
       , corner = 2 * Math.PI / total;
 

@@ -10,64 +10,85 @@
   </head>
   <body>
 
-    <h1>Radial images CSS generator </h1>
+    <header class="masthead">
+      <h1>Radial images CSS generator </h1>
 
-    <form class="controls" name="optForm" onsubmit="return false;">
+      <p>
+        This tool lets you easily place images around a circle with CSS.<br>
+        Open the menu on the left, tweak your settings and click to generate the code. Enjoy!
+      </p>
+    </header>
+
+    <form id="menu" class="controls" name="optForm" onsubmit="return false;">
+      <nav id="menu-toggle" class="form-nav">
+        <span class="ion-navicon-round icon-when-closed"></span>
+        <span class="ion-chevron-left icon-when-open"></span>
+      </nav>
 
       <!-- number of images -->
-      <label for="childrenLen">How many images?</label>
+      <label for="childrenLen">How many images?</label> <br>
       <input name="childrenLen" id="childrenLen" type="range"
+             class="control-input"
              oninput="childrenLenAmount.value=childrenLen.value"
-             min="2" max="50" required value="23" />
+             min="2" max="50" required value="16" />
       <output name="childrenLenAmount" id="childrenLenAmount" for="childrenLen"></output>
 
       <br>
       <!-- size of the images -->
-      <label for="imgSize">Images size</label>
+      <label for="imgSize">Images size</label> <br>
       <input name="imgSize" id="imgSize" type="range"
+             class="control-input"
              oninput="imgSizeAmount.value=imgSize.value + 'px'"
              min="1" max="200"required value="70"/>
       <output name="imgSizeAmount" id="imgSizeAmount" for="imgSize"></output>
 
       <br>
       <!-- size of the circle -->
-      <label for="circleSize">Size of the circle</label>
+      <label for="circleSize">Size of the circle</label> <br>
       <input name="circleSize" id="circleSize" type="range"
+             class="control-input"
              oninput="circleSizeAmount.value=circleSize.value + 'px'"
              min="1" max="1000" required value="400"/>
       <output name="circleSizeAmount" id="circleSizeAmount" for="circleSize"></output>
 
       <br>
       <!-- distance from the circle border -->
-      <label for="distance">Distance of the images from the circle</label>
+      <label for="distance">Distance of the images from the circle</label> <br>
       <input name="distance" id="distance" type="range"
+             class="control-input"
              oninput="distanceAmount.value=distance.value"
              min="-200" max="200" required value="10"/>
       <output name="distanceAmount" id="distanceAmount" for="distance"></output>
 
       <br>
 
-      <label for="icon">Choose an icon</label>
-      <select name="icon" id="icon">
+      <label for="icon">Choose an icon</label> <br>
+      <select name="icon" class="control-input" id="icon">
         <option value="ion-social-github-outline">Octocat</option>
-        <option value="ion-social-nodejs">Node</option>
-        <option value="ion-social-codepen-outline" selected>Codepen</option>
+        <option value="ion-social-nodejs" selected>Node</option>
+        <option value="ion-social-codepen-outline">Codepen</option>
         <option value="ion-social-dropbox-outline">Dropbox</option>
       </select>
 
       <br>
-      <input name="update" id="update"type="checkbox" value="liveUpdate" checked>
+      <input class="btn" type="submit" value="update">
+      <input class="btn" id="generateCSS" type="button" value="generate CSS">
+      <br>
+      <input name="update" id="update"type="checkbox" value="liveUpdate"
+             class="control-input" checked>
       <label for="update">Live update</label>
 
-      <input type="submit" value="update">
-      <input id="generateCSS" type="button" value="generate CSS">
     </form>
 
     <main class="stage">
       <div id="container"></div>
     </main>
 
-    <pre id="well"></pre>
+    <pre id="well" class="well">
+      <div style="text-align: center">
+        Your generated css code will appear here.
+      </divxs>
+    </pre>
 
     <footer>
       by Nobita - MIT
@@ -79,5 +100,6 @@
     <script>
       System.import('src/app');
     </script>
+    <script src="https://cdn.rawgit.com/ccampbell/rainbow/master/js/rainbow.min.js"></script>
   </body>
 </html>

@@ -1,7 +1,8 @@
-import * as helpers from './js/helpers';
+import {generateCSS} from './js/helpers';
 import * as elem from './js/selectors';
 import * as formValue from './js/formValues';
 import * as logic from './js/logic';
+import {Menu} from './js/uiControls';
 
 function draw() {
   let outerSize = formValue.get(elem.circleSize)
@@ -19,10 +20,10 @@ function draw() {
     imgs: imgSize
   });
 
-  return helpers.generateCSS(coords);
+  return generateCSS(coords, outerSize);
 }
 
-function displayCSS(argument) {
+function displayCSS() {
   let str = draw();
   elem.well.innerHTML = str;
 }
@@ -40,9 +41,18 @@ function init() {
   elem.icon[action]('change', draw, false);
 }
 
-elem.liveFlag.addEventListener('change', init, false);
-elem.genCSS.addEventListener('click', displayCSS, false);
+function startApp() {
+  elem.liveFlag.addEventListener('change', init, false);
+  elem.genCSS.addEventListener('click', displayCSS, false);
 
-init();
-draw();
+  let menu = new Menu();
+  menu.init();
+
+  init();
+  draw();
+}
+
+startApp();
+
+
 
