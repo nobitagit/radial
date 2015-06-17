@@ -26,6 +26,13 @@ h1{
 p{
   line-height: 1.6em;
 }
+a:link, a:visited{
+  text-decoration: none;
+  color: inherit;
+}
+a:hover{
+  text-decoration: underline;
+}
 .btn{
   background: #30CACA;
   border: none;
@@ -143,19 +150,19 @@ p{
   top: 0;
   bottom: 0;
 }
-.well {
-  min-height: 20px;
-  padding: 19px;
-  margin-bottom: 20px;
-/*  background-color: #f5f5f5;
-  border: 1px solid #e3e3e3;*/
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
-  margin-top: 40px;
+.code-preview{
+  margin: 70px 40px 20px;
 }
-
+pre{
+  border-radius: 6px;
+  border: 5px solid #BBBFCF;
+  max-height: 300px;
+}
+:not(pre) > code[class*="language-css"], pre[class*="language-css"] {
+  background: #3C3D3F;
+}
 footer{
   text-align: center;
   padding-bottom: 40px;
 }
+

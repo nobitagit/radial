@@ -4,7 +4,7 @@
   "description": "generate css code to place things around a point in your html",
   "main": "index.js",
   "scripts": {
-    "serve" : "open http://localhost:3000/src/ && serve",
+    "serve": "open http://localhost:3000/src/ && serve",
     "bundle-sfx": "jspm bundle-sfx src/app dist/app.js",
     "bundle": "jspm bundle src/app dist/app.js"
   },
@@ -16,7 +16,9 @@
   },
   "jspm": {
     "directories": {},
-    "dependencies": {},
+    "dependencies": {
+      "prism": "github:PrismJS/prism@^1.0.0"
+    },
     "devDependencies": {
       "babel": "npm:babel-core@^5.1.13",
       "babel-runtime": "npm:babel-runtime@^5.1.13",

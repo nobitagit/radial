@@ -3,6 +3,7 @@ import * as elem from './js/selectors';
 import * as formValue from './js/formValues';
 import * as logic from './js/logic';
 import {Menu} from './js/uiControls';
+import prism from 'prism';
 
 function draw() {
   let outerSize = formValue.get(elem.circleSize)
@@ -25,11 +26,6 @@ function draw() {
 
 function displayCSS() {
   let str = draw();
-//   elem.well.innerHTML = str;
-//   console.log(Rainbow)
-// Rainbow.color(function() {
-//     console.log('the new blocks are now highlighted!');
-// });
   appendCSS(elem.well, str);
 }
 
@@ -55,6 +51,8 @@ function startApp() {
 
   init();
   draw();
+
+  prism.highlightAll();
 }
 
 startApp();
