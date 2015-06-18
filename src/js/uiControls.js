@@ -1,14 +1,11 @@
 let stateClass = 'menu-open';
 
 export class Menu {
-  constructor(opts){
-    if(!opts){
-      var opts = {}
-    }
+  constructor(opts = {}){
     // menu is closed unless otherwise stated at init
     this.isOpen = opts.open || false;
     this.elem = document.getElementById('menu');
-    this.toggler = document.getElementById('menu-toggle')
+    this.toggler = document.getElementById('menu-toggle');
   }
 
   changeClass(action){

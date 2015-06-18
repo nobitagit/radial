@@ -6,11 +6,14 @@
   "scripts": {
     "serve": "open http://localhost:3000/src/ && serve",
     "bundle-sfx": "jspm bundle-sfx src/app dist/app.js",
-    "bundle": "jspm bundle src/app dist/app.js"
+    "bundle": "jspm bundle src/app dist/app.js",
+    "lint": "eslint ./src/**/*.js"
   },
   "author": "Nobita",
   "license": "mit",
   "devDependencies": {
+    "babel-eslint": "^3.1.16",
+    "eslint": "^0.23.0",
     "jspm": "^0.15.6",
     "serve": "^1.4.0"
   },

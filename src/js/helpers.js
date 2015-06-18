@@ -13,7 +13,7 @@ div.parent{
   });
 
   return str;
-}
+};
 
 export let appendCSS = (target, code) => {
 
@@ -22,9 +22,9 @@ export let appendCSS = (target, code) => {
   let div = document.createElement('code');
   div.className = 'language-css';
   div.innerHTML = code;
-  target.appendChild(div)
+  target.appendChild(div);
   prism.highlightElement(div);
   return code;
-}
+};
 
 export let byId = elId => document.getElementById(elId);
