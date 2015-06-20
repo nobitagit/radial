@@ -1,1 +1,1 @@
-Generate css code to place things around a point in your html.
+Generate css code to place things in a perfect circle in your html.
