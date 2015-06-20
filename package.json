@@ -2,18 +2,23 @@
   "name": "radials",
   "version": "0.0.2",
   "description": "generate css code to place things around a point in your html",
-  "main": "index.js",
+  "main": "src/app.js",
   "scripts": {
     "serve": "live-server",
-    "bundle-sfx": "jspm bundle-sfx src/app dist/app.js",
-    "bundle": "jspm bundle src/app dist/app.js",
-    "lint": "eslint ./src/**/*.js"
+    "bundle-sfx": "jspm bundle-sfx src/app dist/bundle.js",
+    "bundle": "jspm bundle src/app dist/bundle.js",
+    "lint": "eslint ./src/**/*.js",
+    "dist:html": "html-dist src/index.html --remove-all --insert bundle.js -o dist/index.html",
+    "dist:css": "cp src/css/styles.css dist/css/styles.css",
+    "prebuild": "rm -r dist; mkdir dist dist/css",
+    "build": "npm run dist:html; npm run dist:css; npm run bundle-sfx;"
   },
   "author": "Nobita",
   "license": "mit",
   "devDependencies": {
     "babel-eslint": "^3.1.16",
     "eslint": "^0.23.0",
+    "html-dist": "^0.1.0",
     "jspm": "^0.15.6",
     "live-server": "^0.7.1"
   },
