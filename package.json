@@ -11,13 +11,15 @@
     "dist:html": "html-dist src/index.html --remove-all --insert bundle.js -o dist/index.html",
     "dist:css": "cp src/css/styles.css dist/css/styles.css",
     "prebuild": "rm -r dist; mkdir dist dist/css",
-    "build": "npm run dist:html; npm run dist:css; npm run bundle-sfx;"
+    "build": "npm run dist:html; npm run dist:css; npm run bundle-sfx;",
+    "golive": "gh-pages -d dist"
   },
   "author": "Nobita",
   "license": "mit",
   "devDependencies": {
     "babel-eslint": "^3.1.16",
     "eslint": "^0.23.0",
+    "gh-pages": "^0.3.1",
     "html-dist": "^0.1.0",
     "jspm": "^0.15.6",
     "live-server": "^0.7.1"
