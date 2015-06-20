@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/PrismJS/prism/gh-pages/themes/prism-tomorrow.css">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+
+    <header class="masthead">
+      <h1>Radial images CSS generator </h1>
+
+      <p>
+        This tool lets you easily place images around a circle with CSS.<br>
+        Open the menu on the left, tweak your settings and click to generate the code. Enjoy!
+      </p>
+    </header>
+
+    <form id="menu" class="controls" name="optForm" onsubmit="return false;">
+      <nav id="menu-toggle" class="form-nav">
+        <span class="ion-navicon-round icon-when-closed"></span>
+        <span class="ion-chevron-left icon-when-open"></span>
+      </nav>
+
+      <!-- number of images -->
+      <label for="childrenLen">How many images?</label> <br>
+      <input name="childrenLen" id="childrenLen" type="range" class="control-input" oninput="childrenLenAmount.value=childrenLen.value" min="2" max="50" required value="16">
+      <output name="childrenLenAmount" id="childrenLenAmount" for="childrenLen"></output>
+
+      <br>
+      <!-- size of the images -->
+      <label for="imgSize">Images size</label> <br>
+      <input name="imgSize" id="imgSize" type="range" class="control-input" oninput="imgSizeAmount.value=imgSize.value + &apos;px&apos;" min="1" max="200" required value="70">
+      <output name="imgSizeAmount" id="imgSizeAmount" for="imgSize"></output>
+
+      <br>
+      <!-- size of the circle -->
+      <label for="circleSize">Size of the circle</label> <br>
+      <input name="circleSize" id="circleSize" type="range" class="control-input" oninput="circleSizeAmount.value=circleSize.value + &apos;px&apos;" min="1" max="1000" required value="400">
+      <output name="circleSizeAmount" id="circleSizeAmount" for="circleSize"></output>
+
+      <br>
+      <!-- distance from the circle border -->
+      <label for="distance">Distance of the images from the circle</label> <br>
+      <input name="distance" id="distance" type="range" class="control-input" oninput="distanceAmount.value=distance.value" min="-200" max="200" required value="10">
+      <output name="distanceAmount" id="distanceAmount" for="distance"></output>
+
+      <br>
+
+      <label for="icon">Choose an icon</label> <br>
+      <select name="icon" class="control-input" id="icon">
+        <option value="ion-social-github-outline">Octocat</option>
+        <option value="ion-social-nodejs" selected>Node</option>
+        <option value="ion-social-codepen-outline">Codepen</option>
+        <option value="ion-social-dropbox-outline">Dropbox</option>
+      </select>
+
+      <br>
+      <input class="btn" type="submit" value="update">
+      <input class="btn" id="generateCSS" type="button" value="generate CSS">
+      <br>
+      <input name="update" id="update" type="checkbox" value="liveUpdate" class="control-input" checked>
+      <label for="update">Live update</label>
+
+    </form>
+
+    <main class="stage">
+      <div id="container"></div>
+    </main>
+
+    <div class="code-preview">
+      <pre id="well">
+        <code class="language-css">
+
+        /* Your generated css code will appear here. */
+        </code>
+      </pre>
+    </div>
+
+    <footer>
+      by <a href="https://github.com/nobitagit">Nobita</a> - MIT
+    </footer>
+
+<a href="https://github.com/nobitagit/radials"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+
+    
+    
+    
+  <script src="bundle.js"></script></body>
+</html>
