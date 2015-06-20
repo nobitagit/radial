@@ -116,8 +116,6 @@ a:hover{
   width: 100%;
   left: 0;
 }
-.icon-when-closed{
-}
 .icon-when-open{
   opacity: 0;
   -webkit-transform: rotate(360deg);

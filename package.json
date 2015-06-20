@@ -4,7 +4,7 @@
   "description": "generate css code to place things around a point in your html",
   "main": "index.js",
   "scripts": {
-    "serve": "open http://localhost:3000/src/ && serve",
+    "serve": "live-server",
     "bundle-sfx": "jspm bundle-sfx src/app dist/app.js",
     "bundle": "jspm bundle src/app dist/app.js",
     "lint": "eslint ./src/**/*.js"
@@ -15,7 +15,7 @@
     "babel-eslint": "^3.1.16",
     "eslint": "^0.23.0",
     "jspm": "^0.15.6",
-    "serve": "^1.4.0"
+    "live-server": "^0.7.1"
   },
   "jspm": {
     "directories": {},
