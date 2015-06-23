@@ -1,7 +1,7 @@
 {
   "name": "radials",
   "version": "0.0.2",
-  "description": "generate css code to place things around a point in your html",
+  "description": "Generate CSS code to place things in a perfect circle.",
   "main": "src/app.js",
   "scripts": {
     "serve": "live-server",
@@ -16,7 +16,11 @@
     "golive": "npm run build; npm run addGa; gh-pages -d dist"
   },
   "author": "Nobita",
-  "license": "mit",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:nobitagit/radial.git"
+  },
   "devDependencies": {
     "babel-eslint": "^3.1.16",
     "eslint": "^0.23.0",
